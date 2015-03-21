@@ -1,11 +1,8 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	s := "package main\n\nimport (    \"fmt\"\n    \"strings\"\n)\nfunc main() {\n    s := \"%s\"\n    fmt.Println(s, fmt.Sprintf(s, strings.Replace(s, \"\\n\" \"\\n\", -1)))\n}\n"
-	fmt.Println(fmt.Sprintf(s, strings.Replace(s, "\n", "\\n", -1)))
+	s := "package main\n\nimport \"fmt\"\n\nfunc main() {\n\ts := %q\n\tfmt.Println(fmt.Sprintf(s, s))\n}"
+	fmt.Println(fmt.Sprintf(s, s))
 }
